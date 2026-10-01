@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -16,8 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
     private static final int REQ = 100;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -26,6 +24,7 @@ public class MainActivity extends Activity {
         EditText aliasNumber = findViewById(R.id.aliasNumber);
         Button saveAlias = findViewById(R.id.saveAlias);
         Button startBtn = findViewById(R.id.startBtn);
+        Button wakeBtn = findViewById(R.id.wakeBtn);
         Button accessibilityBtn = findViewById(R.id.accessibilityBtn);
 
         requestPermissionsIfNeeded();
@@ -47,12 +46,18 @@ public class MainActivity extends Activity {
                 Intent i = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                         Uri.parse("package:" + getPackageName()));
                 startActivity(i);
-                Toast.makeText(this, "Enable 'Display over other apps', then tap Start ULTRON again.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Enable Display over other apps, then tap Start ULTRON again.", Toast.LENGTH_LONG).show();
                 return;
             }
             Intent service = new Intent(this, UltronService.class);
             startForegroundService(service);
-            status.setText("ULTRON active — say: Hey ULTRON");
+            status.setText("ULTRON ready — mic OFF. Volume Up ×3 to wake.");
+        });
+
+        wakeBtn.setOnClickListener(v -> {
+            Intent service = new Intent(this, UltronService.class);
+            service.setAction(UltronService.ACTION_WAKE);
+            startForegroundService(service);
         });
 
         accessibilityBtn.setOnClickListener(v ->

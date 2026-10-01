@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">ULTRON</string>
-    <string name="accessibility_desc">Helps ULTRON fill Chennai One booking screens. Payment confirmation is always left to you.</string>
+    <string name="accessibility_desc">Enables ULTRON’s Volume Up triple-press wake shortcut and best-effort Chennai One booking assistance. Payment authorization is always left to you.</string>
 </resources>

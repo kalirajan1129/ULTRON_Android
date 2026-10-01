@@ -1,73 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center_horizontal"
     android:background="#080808">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ULTRON"
-        android:textColor="#FF2A2A"
-        android:textStyle="bold"
-        android:textSize="38sp"
-        android:layout_marginTop="42dp"/>
-
-    <TextView
-        android:id="@+id/statusText"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Wake phrase: Hey ULTRON"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        android:gravity="center"
-        android:layout_marginTop="16dp"/>
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
 
-    <EditText
-        android:id="@+id/aliasName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Alias name (e.g. Akka)"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#AAAAAA"
-        android:layout_marginTop="36dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ULTRON"
+            android:textColor="#FF2A2A"
+            android:textStyle="bold"
+            android:textSize="38sp"
+            android:layout_marginTop="34dp"/>
 
-    <EditText
-        android:id="@+id/aliasNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Phone number"
-        android:inputType="phone"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#AAAAAA"/>
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy mode: mic off until Volume Up ×3"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginTop="14dp"/>
 
-    <Button
-        android:id="@+id/saveAlias"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Save call alias"/>
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start ULTRON"
+            android:layout_marginTop="24dp"/>
 
-    <Button
-        android:id="@+id/startBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Start ULTRON"
-        android:layout_marginTop="18dp"/>
+        <Button
+            android:id="@+id/wakeBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test wake now"/>
 
-    <Button
-        android:id="@+id/accessibilityBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Enable Chennai One automation"/>
+        <Button
+            android:id="@+id/accessibilityBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable ULTRON Accessibility + Volume shortcut"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Examples:\n• Hey ULTRON → சொல்லுங்க பாஸ்\n• Akka-ku call pannu\n• T Nagar-ku route podu\n• WhatsApp open pannu\n• Top five technology news\n• Velachery to T Nagar ticket book pannu"
-        android:textColor="#CCCCCC"
-        android:textSize="15sp"
-        android:layout_marginTop="24dp"/>
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saved call aliases"
+            android:textColor="#FF7777"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_marginTop="28dp"/>
+
+        <EditText
+            android:id="@+id/aliasName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alias name (e.g. Akka)"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"/>
+
+        <EditText
+            android:id="@+id/aliasNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone number"
+            android:inputType="phone"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"/>
+
+        <Button
+            android:id="@+id/saveAlias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save call alias"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Natural command examples:\n• Akka-ku call pannu\n• T Nagar-ku route podu\n• Chennai-la top 5 technology news sollu\n• India sports news top 3\n• WhatsApp open pannu\n• Velachery-la irundhu T Nagar-ku bus 51A, OTP 4821, ticket book pannu"
+            android:textColor="#CCCCCC"
+            android:textSize="15sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="32dp"/>
+    </LinearLayout>
+</ScrollView>
